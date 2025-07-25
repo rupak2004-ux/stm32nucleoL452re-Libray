@@ -20,7 +20,7 @@ void GPIO_INIT(GPIO_Handle_t *pGPIOHANDLE)
 		// NON-INTERRUPT MODE
 		temp = (pGPIOHANDLE->GPIO_PinConfig.GPIO_PinMode << (2 * pGPIOHANDLE->GPIO_PinConfig.GPIO_PinNumber));
 
-		// ❌ BUG: Was shifting by pin number (wrong), should shift by 2*pin
+		
 		pGPIOHANDLE->PGPIOX->MODER &= ~(0x3 << (2 * pGPIOHANDLE->GPIO_PinConfig.GPIO_PinNumber));
 		pGPIOHANDLE->PGPIOX->MODER |= temp;
 	}
